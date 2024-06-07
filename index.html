@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Weather Forecast App</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-r from-blue-500 to-indigo-700 min-h-screen flex items-center justify-center"
+  >
+    <div id="app" class="container mx-auto p-8 flex justify-center">
+      <div
+        class="bg-white rounded-3xl shadow-lg overflow-hidden w-full max-w-4xl"
+      >
+        <div class="p-8">
+          <!--Header-->
+          <header
+            class="tracking-wide text-center text-3xl text-indigo-600 font-semibold mb-6"
+          >
+            <i class="fas fa-cloud-sun"></i> Weather Forecast
+          </header>
+
+          <!--Search city form-->
+          <form id="weatherForm" class="mb-6 relative">
+            <!--Search icon-->
+            <div class="flex items-center border-b border-indigo-500 py-2">
+              <span class="text-gray-500 pl-3">
+                <i class="fas fa-search"></i>
+              </span>
+
+              <!--Search input-->
+              <input
+                id="cityInput"
+                class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                type="text"
+                placeholder="Enter city"
+                aria-label="City"
+              />
+
+              <!--Search button-->
+              <button
+                class="flex-shrink-0 bg-indigo-500 hover:bg-indigo-700 text-sm border-4 text-white py-1 px-2 rounded"
+                type="submit"
+              >
+                Get Weather
+              </button>
+            </div>
+
+            <!--Error div-->
+            <div id="error" class="text-red-500 mt-2"></div>
+          </form>
+
+          <!--Get current location-->
+          <button
+            id="currentLocationBtn"
+            class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-6"
+          >
+            Use Current Location
+          </button>
+
+          <!--Recent city dropdown-->
+          <select
+            id="recentCities"
+            class="mb-6 p-2 border rounded w-full hidden"
+          >
+            <option value="">Select recent city</option>
+          </select>
+
+          <!--Weather data-->
+          <div id="weatherData" class="mb-6 text-center"></div>
+
+          <!--Extended forecast data-->
+          <div
+            id="forecast"
+            class="p-4 bg-gray-100 rounded-lg shadow grid grid-cols-1 md:grid-cols-3 gap-4"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
